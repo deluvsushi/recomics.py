@@ -2,7 +2,7 @@ import requests
 
 class Recomics:
     def __init__(self):
-        self.api = "https://api.recomics.org"
+        self.api = "https://api.renovels.org"
         self.headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"}
         self.user_id = None
@@ -157,7 +157,11 @@ class Recomics:
             headers=self.headers).json()
 
     def get_title_comments(self, title_id: int, page: int = 1):
-        data = {"title_id": title_id, "page": page, "ordering": "-id"}
+        data = {
+            "title_id": title_id,
+            "page": page,
+            "ordering": "-id"
+        }
         return requests.get(
             f"{self.api}/api/activity/comments/?title_id={title_id}&page={page}&ordering=-id",
             json=data,
