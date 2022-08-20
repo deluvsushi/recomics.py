@@ -2,7 +2,7 @@ import requests
 
 class Recomics:
     def __init__(self):
-        self.api = "https://api.renovels.org"
+        self.api = "https://api.recomics.org"
         self.headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"}
         self.user_id = None
